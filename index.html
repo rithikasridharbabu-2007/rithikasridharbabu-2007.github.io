@@ -1,76 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rithika Sridharbabu</title>
+<meta name="description" content="Computer Engineering student at San José State University working on AI that runs efficiently on real hardware.">
+<style>
+  :root {
+    --bg: #fbfaf7; --surface: #ffffff; --text: #1b1d21; --muted: #5d636e;
+    --line: #e4e1da; --accent: #0b6e5f; --accent-soft: #e3f1ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121416; --surface: #1a1d20; --text: #e9eaec; --muted: #9aa1ac;
+      --line: #2a2e33; --accent: #5fd0bb; --accent-soft: #17302c;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .skip { position: absolute; left: -9999px; }
+  .skip:focus { left: 16px; top: 12px; background: var(--surface); padding: 8px 12px; border-radius: 6px; }
 
+  header.site { border-bottom: 1px solid var(--line); }
+  header.site .wrap { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; padding-bottom: 16px; gap: 16px; flex-wrap: wrap; }
+  .brand { font-weight: 650; letter-spacing: -0.01em; text-decoration: none; color: var(--text); }
+  nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+  nav a:hover { color: var(--text); }
 
-rithika.dev
-experience
-projects
-contact
-COMPUTER ENGINEERING · SJSU · CLASS OF 2029
-Rithika SridharBabu
-Freshman building AI-powered apps, doing medical imaging research, and shipping backend systems that real users depend on.
-GitHub
-LinkedIn
-Email
-6+
-PROJECTS SHIPPED
-6
-TEAM MEMBERS DEPENDING ON MY BACKEND
-1
-MLH HACKATHON
-1.5yr
-AI/ML RESEARCH
-EXPERIENCE
-Backend Developer — REMIND
-AI Web App · Team of 6 · Launching to SJSU Students
-Sole backend developer. Built the entire server from scratch — Node.js, Express, MongoDB, JWT auth, REST APIs. Semantic embeddings and cosine similarity matching for AI-powered pattern detection. Five teammates depend on this code daily.
-Feb 2026 – Present
-AI/ML Research Assistant
-San Jose State University · Medical Imaging Lab
-Conducting research on BraTS brain tumor MRI dataset using PyTorch. Implementing supervised learning models (Logistic Regression, SVM, Random Forest) for tumor classification. Contributing to vision-language modeling approaches.
-Aug 2025 – Apr 2026
-PROJECTS
+  .hero { padding: 72px 0 56px; }
+  .eyebrow { font: 600 13px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; }
+  h1 { font-size: clamp(36px, 7vw, 56px); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 20px; }
+  .lede { font-size: 20px; color: var(--muted); max-width: 40em; margin: 0 0 28px; }
+  .links { display: flex; gap: 12px; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; }
+  .links a { display: inline-block; padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); text-decoration: none; color: var(--text); font-size: 15px; }
+  .links a:hover { border-color: var(--accent); }
 
-MLH HackWithBay 2.0
-Startup Investor Matching Platform
-Built the entire AI integration layer in one day. 6 FastAPI endpoints, RocketRide pipeline, Neo4j graph database integration, Claude Sonnet API. Live investor match scores, conflict flags, and personalized email drafting.
-Python
-FastAPI
-Claude Sonnet
-Neo4j
-RocketRide
-Real-Time Sign Language Translator
-Webcam-based ASL translator using MediaPipe to extract 21 hand landmarks per frame. LSTM model for gesture classification. React UI with live landmark visualization and real-time captions.
-PyTorch
-MediaPipe
-React
-TypeScript
-LSTM
-Smart Meal
-AI-powered meal recommendation system using receipt and fridge image inputs. OCR and OpenCV for ingredient detection. Collaborative household voting and chore rotation logic.
-OpenCV
-FastAPI
-React
-OCR
-SyntheticQA
-Automated pipeline to evaluate synthetic videos for physical plausibility. Rule-based checks for gravity violations and unrealistic motion. Gradio interface for dataset inspection and export.
-Python
-Gradio
-Computer Vision
-SKILLS
-LANGUAGES
-Python · JavaScript · TypeScript · SQL
-BACKEND
-Node.js · Express · FastAPI · MongoDB · JWT · REST APIs
-FRONTEND
-React · TypeScript · HTML/CSS
-AI / ML
-PyTorch · MediaPipe · OpenCV · scikit-learn · LSTM · Claude API
-DATABASES
-MongoDB · PostgreSQL · MySQL · Neo4j
-TOOLS
-Git · GitHub · Docker (learning)
-Let's build something.
-Open to internships, research, and collaboration. Based in San Jose, CA.
-rithikasridharbabu22@gmail.com
-LinkedIn
-GitHub
-built by rithika sridharbabu · sjsu computer engineering · 2029
+  section { padding: 44px 0; border-top: 1px solid var(--line); }
+  h2 { font: 600 13px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 24px; }
+  h3 { font-size: 19px; margin: 0; letter-spacing: -0.01em; }
+  .item { margin-bottom: 30px; }
+  .item:last-child { margin-bottom: 0; }
+  .item-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: baseline; }
+  .when { color: var(--muted); font-size: 14px; white-space: nowrap; }
+  .where { color: var(--muted); margin: 2px 0 8px; font-size: 15px; }
+  .item p { margin: 6px 0 0; }
+  .item ul { margin: 8px 0 0; padding-left: 20px; }
+  .item li { margin-bottom: 4px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .card p { margin: 8px 0 12px; font-size: 16px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; }
+  .tags li { font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--accent-soft); color: var(--accent); padding: 3px 8px; border-radius: 6px; }
+  .badge { font: 600 11px/1.4 ui-monospace, monospace; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; margin-left: 6px; vertical-align: middle; }
+
+  dl.skills { display: grid; grid-template-columns: max-content 1fr; gap: 10px 24px; margin: 0; }
+  dl.skills dt { color: var(--muted); font-size: 15px; }
+  dl.skills dd { margin: 0; }
+  @media (max-width: 520px) { dl.skills { grid-template-columns: 1fr; gap: 2px 0; } dl.skills dd { margin-bottom: 12px; } }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">Rithika Sridharbabu</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#open-source">Open source</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap" id="top">
+    <div class="hero">
+      <p class="eyebrow">Computer Engineering · SJSU · Class of 2029</p>
+      <h1>Rithika Sridharbabu</h1>
+      <p class="lede">I work on AI that runs efficiently on real hardware: machine-learning research, FPGA and GPU systems, open-source memory and chip-design tools, and AI products people can use.</p>
+      <ul class="links">
+        <li><a href="https://github.com/rithikasridharbabu-2007">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/rithika-sridhar-31876b378/">LinkedIn</a></li>
+        <li><a href="mailto:rithika.sridharbabu@sjsu.edu">Email</a></li>
+      </ul>
+    </div>
+
+    <section id="research" aria-labelledby="research-h">
+      <h2 id="research-h">Research</h2>
+
+      <div class="item">
+        <div class="item-head">
+          <h3>Student Researcher, Heterogeneous Compute Lab</h3>
+          <span class="when">Nov 2026 – present</span>
+        </div>
+        <p class="where">San José State University</p>
+        <ul>
+          <li>FPGA team: studying whether high-level algorithm models can predict FPGA resource use (LUTs, DSPs, block RAM) and latency before the hardware design is written. Leading the literature review on ML-based estimation.</li>
+          <li>GPU team: contributing to CUDA memory-optimisation research for robot perception workloads on a Unitree Go2.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <h3>Undergraduate Researcher, MICoSys Lab</h3>
+          <span class="when">Sep 2025 – present</span>
+        </div>
+        <p class="where">San José State University</p>
+        <ul>
+          <li>Benchmarking supervised deep-learning models for brain-tumour segmentation on multimodal MRI scans from the BraTS dataset.</li>
+          <li>Exploring vision-language models that combine imaging and text for medical data.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="open-source" aria-labelledby="oss-h">
+      <h2 id="oss-h">Open source</h2>
+      <div class="item">
+        <ul>
+          <li><a href="https://github.com/CMU-SAFARI/ramulator2">Ramulator 2.0</a> (DRAM simulator, C++): fix rejecting invalid ClosedCAP memory-controller values. <span class="badge">In review</span></li>
+          <li><a href="https://github.com/olofk/edalize">Edalize</a> (chip-design tool library, Python): two VUnit backend fixes for relative work paths and empty cores. <span class="badge">In review</span></li>
+          <li><a href="https://github.com/xtensor-stack/xtensor">xtensor</a> and <a href="https://github.com/catchorg/Catch2">Catch2</a> (C++ libraries): generator performance and range-support improvements. <span class="badge">In review</span></li>
+          <li><a href="https://github.com/rcc-sjsu/rcc-site-final">Responsible Computing Club website</a>: redesigned site footer. <span class="badge">Merged</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-h">
+      <h2 id="projects-h">Projects</h2>
+      <div class="cards">
+
+        <article class="card">
+          <h3><a href="https://github.com/rithikasridharbabu-2007/tab">Tab</a></h3>
+          <p>A phone-first AI agent for one-person businesses. Describe a sale by voice and it drafts a PayPal invoice with a note in the customer's language, then plans polite follow-ups you approve. Built for the PayPal AI Hackathon 2026.</p>
+          <ul class="tags"><li>Node.js</li><li>Express</li><li>Gemini</li><li>PayPal Invoicing</li></ul>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/rithikasridharbabu-2007/Scanly">Scanly</a></h3>
+          <p>An accessibility auditor that scans a page with Playwright and axe-core and explains each problem in plain language for student developers. I lead the five-person Responsible Computing Club team building it.</p>
+          <ul class="tags"><li>TypeScript</li><li>Next.js</li><li>Playwright</li><li>axe-core</li></ul>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/rithikasridharbabu-2007/token-saver">token-saver</a></h3>
+          <p>A command-line tool that picks the relevant parts of a codebase for a question, shows why each excerpt was chosen, and measures what is lost at smaller prompt budgets.</p>
+          <ul class="tags"><li>Node.js</li><li>CLI</li></ul>
+        </article>
+
+        <article class="card">
+          <h3><a href="https://github.com/sonakshipanda/remind-app">Remind</a></h3>
+          <p>A Responsible Computing Club team app. I set up the initial backend server and built the forgot-password and reset-password flow.</p>
+          <ul class="tags"><li>Node.js</li><li>Express</li><li>Backend</li></ul>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="community" aria-labelledby="community-h">
+      <h2 id="community-h">Leadership</h2>
+      <div class="item">
+        <div class="item-head"><h3>Technical Chair, Society of Women Engineers (SJSU)</h3><span class="when">Sep 2026 – present</span></div>
+        <p>Organised a hands-on data workshop; now leading technical planning for upcoming workshops and a hackathon.</p>
+      </div>
+      <div class="item">
+        <div class="item-head"><h3>Web Development Ambassador, Responsible Computing Club (SJSU)</h3><span class="when">Apr 2026 – present</span></div>
+        <p>Rebuilding the club website and leading the Scanly project team.</p>
+      </div>
+      <div class="item">
+        <div class="item-head"><h3>Technical Team, Girls Who Code (SJSU)</h3><span class="when">Aug – Oct 2026</span></div>
+        <p>Created and ran near-weekly technical workshops that helped members build their first projects.</p>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt><dd>Python, C++, JavaScript, TypeScript, Verilog</dd>
+        <dt>AI / ML</dt><dd>Supervised learning, medical image segmentation, vision-language models, LLM APIs</dd>
+        <dt>Hardware</dt><dd>FPGA design (Gowin, Tang Nano 20K), cocotb, Verilator, Ramulator 2.0, CUDA basics</dd>
+        <dt>Tools</dt><dd>Git, Node.js, Express, Next.js, Playwright, Linux</dd>
+      </dl>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact</h2>
+      <p>Open to internships, research and collaboration. Based in San Jose, CA.</p>
+      <p><a href="mailto:rithika.sridharbabu@sjsu.edu">rithika.sridharbabu@sjsu.edu</a></p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Rithika Sridharbabu · Computer Engineering, San José State University</div>
+</footer>
+</body>
+</html>
